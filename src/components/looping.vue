@@ -3,7 +3,12 @@
     <b-container fluid class="m-0">
       <b-row id="body">
         <b-col md="4" v-bind:key="key" v-for="(value, key) in member">
-          <b-form-group label-cols-sm="4" :label="key" label-align-sm="right" label-for="MemberID">
+          <b-form-group
+            label-cols-sm="4"
+            :label="key | spacing | capitalize"
+            label-align-sm="right"
+            label-for="MemberID"
+          >
             <b-form-input id="MemberID" :value="value" disabled/>
           </b-form-group>
         </b-col>
@@ -31,13 +36,11 @@ export default {
     };
   },
   mounted() {
-    var v = this;
-    v.api();
+    this.api();
   },
 
   methods: {
     api() {
-      var v = this;
       var memberData = {
         member_id: 13414,
         firstname: "Bob",
@@ -49,7 +52,7 @@ export default {
         authentication_id: "254",
         memberstatus_status: "Active"
       };
-      v.member = Object.assign(memberData);
+      this.member = Object.assign(memberData);
     }
   }
 };

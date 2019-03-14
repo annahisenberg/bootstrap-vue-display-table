@@ -15,6 +15,19 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
+//filters
+Vue.filter('spacing', function (value) {
+  return value.replace(/_/g, ' ');
+})
+
+Vue.filter('capitalize', function (value) {
+  return value.toLowerCase()
+    .split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ');
+});
+
+
 new Vue({
   store,
   render: h => h(App)
