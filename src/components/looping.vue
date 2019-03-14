@@ -18,23 +18,39 @@ export default {
   data() {
     return {
       member: {
-        id: 6931,
-        orgnaization_id: 0,
-        firstname: "MICHAEL",
-        middlename: null,
-        lastname: "ROOF",
-        memberstatus_id: 48,
-        authentication_id: "23b99ebd-1cd9-482d-ace6-548ebc7777e0",
-        status: {
-          id: 48,
-          group_id: 9,
-          caption: "Active",
-          abbreviation: null,
-          sort: "0",
-          isactive: true
-        }
+        member_id: null,
+        firstname: "",
+        lastname: "",
+        orgnaization_id: null,
+        organization_name: "",
+        organization_type: "",
+        legacy_id: null,
+        authentication_id: "",
+        memberstatus_status: ""
       }
     };
+  },
+  mounted() {
+    var v = this;
+    v.api();
+  },
+
+  methods: {
+    api() {
+      var v = this;
+      var memberData = {
+        member_id: 13414,
+        firstname: "Bob",
+        lastname: "Smith",
+        orgnaization_id: 41414,
+        organization_name: "Bob",
+        organization_type: "Small",
+        legacy_id: 4141,
+        authentication_id: "254",
+        memberstatus_status: "Active"
+      };
+      v.member = Object.assign(memberData);
+    }
   }
 };
 </script>
