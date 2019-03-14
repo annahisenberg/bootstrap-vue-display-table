@@ -28,7 +28,8 @@
     <b-card no-body header-bg-variant="primary" class="shadow p-3 mb-5 bg-white rounded">
       <b-tabs card class="mytabs">
         <b-tab title="Roles" active>
-          <Roles/>
+          <!-- <Roles/> -->
+          <Looping/>
         </b-tab>
         <b-tab title="Password Change History" active>
           <b-card-text class="tab-body">Tab Contents 1</b-card-text>
@@ -44,14 +45,16 @@
 <script>
 import Member from "./Member.vue";
 import ApplicationSecurity from "./ApplicationSecurity.vue";
-import Roles from "./Roles.vue";
+// import Roles from "./Roles.vue";
+import Looping from "./looping";
 
 export default {
   name: "Organization",
   components: {
     Member,
     ApplicationSecurity,
-    Roles
+    // Roles
+    Looping
   }
 };
 </script>
